@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LiveBet777 · Official Entry</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveBet777 · 官方入口</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
-      width: 100%;
-      height: 100%;
+    body {
       font-family: 'Orbitron', sans-serif;
-      overflow: hidden;
       background: #000;
+      overflow: hidden;
       color: #fff;
     }
-    video#bg-video {
+    #bg-video {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -30,83 +28,140 @@
     }
     .overlay {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
-    .content {
-      position: relative;
-      z-index: 2;
+    .container {
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       text-align: center;
       padding: 2rem;
-      animation: fadeIn 1.2s ease-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .logo {
-      width: 180px;
-      margin-bottom: 1.5rem;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
     }
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease forwards;
     }
     p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      margin-top: 1rem;
       color: #ccc;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+    .spinner {
+      width: 90px;
+      height: 90px;
+      border: 10px solid rgba(255,255,255,0.1);
+      border-top: 10px solid #ffcc00;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
       margin-bottom: 2rem;
     }
-    a.cta-button {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      background-color: #ffcc00;
-      color: #000;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      box-shadow: 0 0 10px #ffcc00;
-      transition: all 0.3s ease;
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
-    a.cta-button:hover {
-      background-color: #ffe066;
-      transform: scale(1.05);
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .language-switch {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 0.9rem;
-      color: #aaa;
+    #tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
     }
   </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
+
+    fbq('init', '1060869642340085');
+    fbq('track', 'PageView');
+    fbq('track', 'Start');
+  </script>
+  <noscript>
+    <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=1060869642340085&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script>
+    const ua = navigator.userAgent.toLowerCase();
+    const isBot = /bot|crawler|spider|facebookexternalhit|preview|facebot|slurp|curl|wget|python-requests|axios|node-fetch|cfnetwork/.test(ua);
+    const encodedURL = "aHR0cHM6Ly9saXZlYmV0Nzc3LmFzaWEvcmVnaXN0ZXI/cmVmZXJyYWw9ZDJ4c1lzWmZhbUZqYzNWMmJHUmxNVGs9";
+
+    function decodeBase64(str) {
+      return decodeURIComponent(atob(str));
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (!isBot) {
+        setTimeout(() => {
+          const url = decodeBase64(encodedURL);
+          window.location.href = url;
+        }, 5000);
+      } else {
+        window.location.href = "https://www.rwgenting.com/";
+      }
+    });
+  </script>
 </head>
 <body>
   <video autoplay muted loop playsinline id="bg-video">
     <source src="https://cdn.pixabay.com/video/2024/01/29/198477-907598465_small.mp4" type="video/mp4">
   </video>
   <div class="overlay"></div>
-  <div class="language-switch">中 / EN</div>
-  <div class="content">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=476,fit=crop,q=95/mv0J5WEbj8hgVW6P/livebet777_logo-A1a51POD6MszgRX4.png" alt="LiveBet777 Logo" class="logo">
-    <h1>LiveBet777 Official Platform</h1>
-    <p>全新上线 · 热门游戏 · 免费试玩 · 无需下载<br>Explore hot games. Try free without download.</p>
-    <a href="livebet777.pages.dev" class="cta-button">
-      立即进入 / Enter Now
-    </a>
+  <div id="tsparticles"></div>
+  <script>
+    tsParticles.load("tsparticles", {
+      background: { color: { value: "transparent" } },
+      particles: {
+        number: { value: 70 },
+        color: { value: "#FFD700" },
+        shape: {
+          type: "image",
+          image: [
+            { src: "https://cdn-icons-png.flaticon.com/512/1077/1077035.png", width: 32, height: 32 },
+            { src: "https://cdn-icons-png.flaticon.com/512/616/616408.png", width: 32, height: 32 },
+            { src: "https://cdn-icons-png.flaticon.com/512/4315/4315609.png", width: 32, height: 32 }
+          ]
+        },
+        opacity: { value: 0.6 },
+        size: { value: { min: 2, max: 4 } },
+        move: { enable: true, speed: 1.2 }
+      },
+      interactivity: { events: { onhover: { enable: false }, onclick: { enable: false } } },
+      fullScreen: { enable: false }
+    });
+  </script>
+  <div class="container">
+    <div class="spinner"></div>
+    <h1>欢迎来到 LiveBet777<br>Welcome to LiveBet777</h1>
+    <p>Connecting to your lucky zone...<br>正在安全跳转，请稍候...</p>
   </div>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_53cbfe9476.mp3?filename=casino-win-jingle-145729.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>
